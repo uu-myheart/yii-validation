@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation\Rules;
+namespace Curia\Validation\Rules;
 
 class In
 {
@@ -32,7 +32,7 @@ class In
      *
      * @return string
      *
-     * @see \Illuminate\Validation\ValidationRuleParser::parseParameters
+     * @see \Curia\Validation\ValidationRuleParser::parseParameters
      */
     public function __toString()
     {

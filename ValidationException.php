@@ -1,10 +1,9 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
 use Exception;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Validator as ValidatorFacade;
+use Curia\Collect\Arr;
 
 class ValidationException extends Exception
 {

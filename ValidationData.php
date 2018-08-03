@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
+use Curia\Collect\Arr;
+use Curia\Collect\Str;
 
 class ValidationData
 {

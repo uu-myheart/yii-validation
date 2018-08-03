@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
 /**
  * Provides default implementation of ValidatesWhenResolved contract.
@@ -38,7 +38,7 @@ trait ValidatesWhenResolvedTrait
     /**
      * Get the validator instance for the request.
      *
-     * @return \Illuminate\Validation\Validator
+     * @return \Curia\Validation\Validator
      */
     protected function getValidatorInstance()
     {
@@ -48,10 +48,10 @@ trait ValidatesWhenResolvedTrait
     /**
      * Handle a failed validation attempt.
      *
-     * @param  \Illuminate\Validation\Validator  $validator
+     * @param  \Curia\Validation\Validator  $validator
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \Curia\Validation\ValidationException
      */
     protected function failedValidation(Validator $validator)
     {
@@ -77,7 +77,7 @@ trait ValidatesWhenResolvedTrait
      *
      * @return void
      *
-     * @throws \Illuminate\Validation\UnauthorizedException
+     * @throws \Curia\Validation\UnauthorizedException
      */
     protected function failedAuthorization()
     {

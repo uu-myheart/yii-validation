@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
 use Illuminate\Support\ServiceProvider;
 

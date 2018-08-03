@@ -1,18 +1,14 @@
 <?php
 
-namespace Illuminate\Validation;
-
-use Illuminate\Support\Traits\Macroable;
+namespace Curia\Validation;
 
 class Rule
 {
-    use Macroable;
-
     /**
      * Get a dimensions constraint builder instance.
      *
      * @param  array  $constraints
-     * @return \Illuminate\Validation\Rules\Dimensions
+     * @return \Curia\Validation\Rules\Dimensions
      */
     public static function dimensions(array $constraints = [])
     {
@@ -24,7 +20,7 @@ class Rule
      *
      * @param  string  $table
      * @param  string  $column
-     * @return \Illuminate\Validation\Rules\Exists
+     * @return \Curia\Validation\Rules\Exists
      */
     public static function exists($table, $column = 'NULL')
     {
@@ -35,7 +31,7 @@ class Rule
      * Get an in constraint builder instance.
      *
      * @param  array|string  $values
-     * @return \Illuminate\Validation\Rules\In
+     * @return \Curia\Validation\Rules\In
      */
     public static function in($values)
     {
@@ -46,7 +42,7 @@ class Rule
      * Get a not_in constraint builder instance.
      *
      * @param  array|string  $values
-     * @return \Illuminate\Validation\Rules\NotIn
+     * @return \Curia\Validation\Rules\NotIn
      */
     public static function notIn($values)
     {
@@ -58,7 +54,7 @@ class Rule
      *
      * @param  string  $table
      * @param  string  $column
-     * @return \Illuminate\Validation\Rules\Unique
+     * @return \Curia\Validation\Rules\Unique
      */
     public static function unique($table, $column = 'NULL')
     {

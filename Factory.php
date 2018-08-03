@@ -1,14 +1,12 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
 use Closure;
-use Illuminate\Support\Str;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Translation\Translator;
-use Illuminate\Contracts\Validation\Factory as FactoryContract;
+use Curia\Collect\Str;
+use Curia\Validation\Translator;
 
-class Factory implements FactoryContract
+class Factory
 {
     /**
      * The Translator implementation.
@@ -20,7 +18,7 @@ class Factory implements FactoryContract
     /**
      * The Presence Verifier implementation.
      *
-     * @var \Illuminate\Validation\PresenceVerifierInterface
+     * @var \Curia\Validation\PresenceVerifierInterface
      */
     protected $verifier;
 
@@ -80,7 +78,7 @@ class Factory implements FactoryContract
      * @param  \Illuminate\Contracts\Container\Container  $container
      * @return void
      */
-    public function __construct(Translator $translator, Container $container = null)
+    public function __construct(Translator $translator = null, Container $container = null)
     {
         $this->container = $container;
         $this->translator = $translator;
@@ -93,7 +91,7 @@ class Factory implements FactoryContract
      * @param  array  $rules
      * @param  array  $messages
      * @param  array  $customAttributes
-     * @return \Illuminate\Validation\Validator
+     * @return \Curia\Validation\Validator
      */
     public function make(array $data, array $rules, array $messages = [], array $customAttributes = [])
     {
@@ -129,7 +127,7 @@ class Factory implements FactoryContract
      * @param  array  $customAttributes
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \Curia\Validation\ValidationException
      */
     public function validate(array $data, array $rules, array $messages = [], array $customAttributes = [])
     {
@@ -143,7 +141,7 @@ class Factory implements FactoryContract
      * @param  array  $rules
      * @param  array  $messages
      * @param  array  $customAttributes
-     * @return \Illuminate\Validation\Validator
+     * @return \Curia\Validation\Validator
      */
     protected function resolve(array $data, array $rules, array $messages, array $customAttributes)
     {
@@ -157,7 +155,7 @@ class Factory implements FactoryContract
     /**
      * Add the extensions to a validator instance.
      *
-     * @param  \Illuminate\Validation\Validator  $validator
+     * @param  \Curia\Validation\Validator  $validator
      * @return void
      */
     protected function addExtensions(Validator $validator)
@@ -263,7 +261,7 @@ class Factory implements FactoryContract
     /**
      * Get the Presence Verifier implementation.
      *
-     * @return \Illuminate\Validation\PresenceVerifierInterface
+     * @return \Curia\Validation\PresenceVerifierInterface
      */
     public function getPresenceVerifier()
     {
@@ -273,7 +271,7 @@ class Factory implements FactoryContract
     /**
      * Set the Presence Verifier implementation.
      *
-     * @param  \Illuminate\Validation\PresenceVerifierInterface  $presenceVerifier
+     * @param  \Curia\Validation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
     public function setPresenceVerifier(PresenceVerifierInterface $presenceVerifier)

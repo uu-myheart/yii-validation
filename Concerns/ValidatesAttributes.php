@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation\Concerns;
+namespace Curia\Validation\Concerns;
 
 use DateTime;
 use Countable;
@@ -8,12 +8,12 @@ use Exception;
 use Throwable;
 use DateTimeZone;
 use DateTimeInterface;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
+use Curia\Collect\Arr;
+use Curia\Collect\Str;
 use InvalidArgumentException;
-use Illuminate\Validation\Rules\Exists;
-use Illuminate\Validation\Rules\Unique;
-use Illuminate\Validation\ValidationData;
+use Curia\Validation\Rules\Exists;
+use Curia\Validation\Rules\Unique;
+use Curia\Validation\ValidationData;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

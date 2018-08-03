@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Validation\Concerns;
+namespace Curia\Validation\Concerns;
 
-use Illuminate\Support\Arr;
+use Curia\Collect\Arr;
 
 trait ReplacesAttributes
 {

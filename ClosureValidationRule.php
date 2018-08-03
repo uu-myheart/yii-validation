@@ -1,10 +1,8 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
-use Illuminate\Contracts\Validation\Rule as RuleContract;
-
-class ClosureValidationRule implements RuleContract
+class ClosureValidationRule
 {
     /**
      * The callback that validates the attribute.

@@ -1,12 +1,11 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
 use Closure;
-use Illuminate\Support\Str;
-use Illuminate\Database\ConnectionResolverInterface;
+use Curia\Collect\Str;
 
-class DatabasePresenceVerifier implements PresenceVerifierInterface
+class DatabasePresenceVerifier
 {
     /**
      * The database connection instance.

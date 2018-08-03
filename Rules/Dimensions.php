@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation\Rules;
+namespace Curia\Validation\Rules;
 
 class Dimensions
 {

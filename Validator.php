@@ -1,21 +1,13 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
 use RuntimeException;
+use Curia\Collect\Arr;
+use Curia\Collect\Str;
 use BadMethodCallException;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Illuminate\Support\Fluent;
-use Illuminate\Support\MessageBag;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Translation\Translator;
-use Illuminate\Contracts\Validation\ImplicitRule;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Illuminate\Contracts\Validation\Rule as RuleContract;
-use Illuminate\Contracts\Validation\Validator as ValidatorContract;
 
-class Validator implements ValidatorContract
+class Validator
 {
     use Concerns\FormatsMessages,
         Concerns\ValidatesAttributes;
@@ -37,7 +29,7 @@ class Validator implements ValidatorContract
     /**
      * The Presence Verifier implementation.
      *
-     * @var \Illuminate\Validation\PresenceVerifierInterface
+     * @var \Curia\Validation\PresenceVerifierInterface
      */
     protected $presenceVerifier;
 
@@ -194,7 +186,7 @@ class Validator implements ValidatorContract
      * @param  array  $customAttributes
      * @return void
      */
-    public function __construct(Translator $translator, array $data, array $rules,
+    public function __construct(Translator $translator = null, array $data, array $rules,
                                 array $messages = [], array $customAttributes = [])
     {
         $this->initialRules = $rules;
@@ -298,7 +290,7 @@ class Validator implements ValidatorContract
      *
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \Curia\Validation\ValidationException
      */
     public function validate()
     {
@@ -831,7 +823,7 @@ class Validator implements ValidatorContract
     public function addExtensions(array $extensions)
     {
         if ($extensions) {
-            $keys = array_map('\Illuminate\Support\Str::snake', array_keys($extensions));
+            $keys = array_map('\Curia\Collect\Str::snake', array_keys($extensions));
 
             $extensions = array_combine($keys, array_values($extensions));
         }
@@ -918,7 +910,7 @@ class Validator implements ValidatorContract
     public function addReplacers(array $replacers)
     {
         if ($replacers) {
-            $keys = array_map('\Illuminate\Support\Str::snake', array_keys($replacers));
+            $keys = array_map('\Curia\Collect\Str::snake', array_keys($replacers));
 
             $replacers = array_combine($keys, array_values($replacers));
         }
@@ -1017,7 +1009,7 @@ class Validator implements ValidatorContract
     /**
      * Get the Presence Verifier implementation.
      *
-     * @return \Illuminate\Validation\PresenceVerifierInterface
+     * @return \Curia\Validation\PresenceVerifierInterface
      *
      * @throws \RuntimeException
      */
@@ -1034,7 +1026,7 @@ class Validator implements ValidatorContract
      * Get the Presence Verifier implementation.
      *
      * @param  string  $connection
-     * @return \Illuminate\Validation\PresenceVerifierInterface
+     * @return \Curia\Validation\PresenceVerifierInterface
      *
      * @throws \RuntimeException
      */
@@ -1048,7 +1040,7 @@ class Validator implements ValidatorContract
     /**
      * Set the Presence Verifier implementation.
      *
-     * @param  \Illuminate\Validation\PresenceVerifierInterface  $presenceVerifier
+     * @param  \Curia\Validation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
     public function setPresenceVerifier(PresenceVerifierInterface $presenceVerifier)

@@ -1,13 +1,12 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace Curia\Validation;
 
 use Closure;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Illuminate\Validation\Rules\Exists;
-use Illuminate\Validation\Rules\Unique;
-use Illuminate\Contracts\Validation\Rule as RuleContract;
+use Curia\Collect\Arr;
+use Curia\Collect\Str;
+use Curia\Validation\Rules\Exists;
+use Curia\Validation\Rules\Unique;
 
 class ValidationRuleParser
 {
