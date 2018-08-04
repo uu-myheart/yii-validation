@@ -13,7 +13,7 @@ class ArrayLoader
 
     public function __construct()
     {
-        $this->messages = require('./zh.php');
+        $this->messages = require __DIR__ . '/zh.php';
     }
 
     /**

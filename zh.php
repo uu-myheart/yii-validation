@@ -32,6 +32,7 @@ return [
     'confirmed'            => ':attribute 两次输入不一致。',
     'date'                 => ':attribute 不是一个有效的日期。',
     'date_format'          => ':attribute 的格式必须为 :format。',
+    'date_equals'          => ':attribute 必须是指定日期',
     'different'            => ':attribute 和 :other 必须不同。',
     'digits'               => ':attribute 必须是 :digits 位的数字。',
     'digits_between'       => ':attribute 必须是介于 :min 和 :max 位的数字。',

@@ -3,34 +3,30 @@
 namespace Curia\Validation;
 
 use Closure;
+use yii\db\Connection;
+use yii\db\Query;
 use Curia\Collect\Str;
-use Curia\Validation\PresenceVerifierInterface;
 
-class DatabasePresenceVerifier implements PresenceVerifierInterface
+class DatabasePresenceVerifier
 {
     /**
      * The database connection instance.
      *
-     * @var \Illuminate\Database\ConnectionResolverInterface
+     * @var \yii\db\Connection
      */
     protected $db;
 
-    /**
-     * The database connection to use.
-     *
-     * @var string
-     */
-    protected $connection;
+    public $defaultDb;
 
     /**
      * Create a new database presence verifier.
      *
-     * @param  \Illuminate\Database\ConnectionResolverInterface  $db
+     * @param  \yii\db\Connection  $db
      * @return void
      */
-    public function __construct(ConnectionResolverInterface $db = null)
+    public function __construct()
     {
-        $this->db = $db;
+
     }
 
     /**
@@ -46,13 +42,13 @@ class DatabasePresenceVerifier implements PresenceVerifierInterface
      */
     public function getCount($collection, $column, $value, $excludeId = null, $idColumn = null, array $extra = [])
     {
-        $query = $this->table($collection)->where($column, '=', $value);
+        $query = $this->table($collection)->where([$column => $value]);
 
         if (! is_null($excludeId) && $excludeId !== 'NULL') {
-            $query->where($idColumn ?: 'id', '<>', $excludeId);
+            $query->andWhere(['<>', $idColumn ?: 'id', $excludeId]);
         }
 
-        return $this->addConditions($query, $extra)->count();
+        return $this->addConditions($query, $extra)->count('*', $this->getDb());
     }
 
     /**
@@ -66,9 +62,9 @@ class DatabasePresenceVerifier implements PresenceVerifierInterface
      */
     public function getMultiCount($collection, $column, array $values, array $extra = [])
     {
-        $query = $this->table($collection)->whereIn($column, $values);
+        $query = $this->table($collection)->andWhere(['in', $column, $values]);
 
-        return $this->addConditions($query, $extra)->count();
+        return $this->addConditions($query, $extra)->count('*', $this->getDb());
     }
 
     /**
@@ -122,7 +118,9 @@ class DatabasePresenceVerifier implements PresenceVerifierInterface
      */
     protected function table($table)
     {
-        return $this->db->connection($this->connection)->table($table)->useWritePdo();
+        // return $this->db->connection($this->connection)->table($table)->useWritePdo();
+        
+        return (new Query)->from($table);
     }
 
     /**
@@ -134,5 +132,24 @@ class DatabasePresenceVerifier implements PresenceVerifierInterface
     public function setConnection($connection)
     {
         $this->connection = $connection;
+    }
+
+    public function setDb($db)
+    {
+        $this->db = $db;
+    }
+
+    public function setDefaultDb($db)
+    {
+        $this->defaultDb = $db;
+    }
+
+    public function getDb()
+    {
+        if (! $this->db) {
+            return \Yii::$app->{$this->defaultDb};
+        }
+
+        return \Yii::$app->{$this->db};
     }
 }

@@ -1,11 +1,8 @@
 {
     "name": "curia/validation",
-    "description": "The Validation package for yii2",
+    "description": "A Validation package for yii2",
     "require": {
         "curia/collect": "^0.1 || ^1.0"
-    },
-    "require-dev": {
-        "filp/whoops": "^2.2@dev"
     },
     "autoload": {
         "psr-4": {

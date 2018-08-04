@@ -54,9 +54,10 @@ class Translator extends NamespacedItemResolver
      * @param  string  $locale
      * @return void
      */
-    public function __construct($loader, $locale)
+    public function __construct(ArrayLoader $loader, $locale = 'zh')
     {
         $this->loader = $loader;
+
         $this->locale = $locale;
     }
 

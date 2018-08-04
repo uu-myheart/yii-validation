@@ -1030,10 +1030,10 @@ class Validator
      *
      * @throws \RuntimeException
      */
-    protected function getPresenceVerifierFor($connection)
+    protected function getPresenceVerifierFor($db)
     {
-        return tap($this->getPresenceVerifier(), function ($verifier) use ($connection) {
-            $verifier->setConnection($connection);
+        return tap($this->getPresenceVerifier(), function ($verifier) use ($db) {
+            $verifier->setDb($db);
         });
     }
 
@@ -1043,7 +1043,7 @@ class Validator
      * @param  \Curia\Validation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
-    public function setPresenceVerifier(PresenceVerifierInterface $presenceVerifier)
+    public function setPresenceVerifier(DatabasePresenceVerifier $presenceVerifier)
     {
         $this->presenceVerifier = $presenceVerifier;
     }

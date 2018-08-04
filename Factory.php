@@ -5,27 +5,23 @@ namespace Curia\Validation;
 use Closure;
 use Curia\Collect\Str;
 use Curia\Validation\Translator;
+use yii\base\InvalidConfigException;
 
 class Factory
 {
+    public $connection;
     /**
      * The Translator implementation.
-     *
-     * @var \Illuminate\Contracts\Translation\Translator
      */
     protected $translator;
 
     /**
      * The Presence Verifier implementation.
-     *
-     * @var \Curia\Validation\PresenceVerifierInterface
      */
     protected $verifier;
 
     /**
      * The IoC container instance.
-     *
-     * @var \Illuminate\Contracts\Container\Container
      */
     protected $container;
 
@@ -74,14 +70,13 @@ class Factory
     /**
      * Create a new Validator factory instance.
      *
-     * @param  \Illuminate\Contracts\Translation\Translator $translator
-     * @param  \Illuminate\Contracts\Container\Container  $container
      * @return void
      */
-    public function __construct(Translator $translator = null, Container $container = null)
+    public function __construct(Translator $translator, DatabasePresenceVerifier $verifier)
     {
-        $this->container = $container;
         $this->translator = $translator;
+
+        $this->verifier = $verifier;
     }
 
     /**
@@ -101,6 +96,9 @@ class Factory
         $validator = $this->resolve(
             $data, $rules, $messages, $customAttributes
         );
+
+        // 设置默认数据库连接
+        $this->verifier->setDefaultDb($this->connection ?? 'db');
 
         if (! is_null($this->verifier)) {
             $validator->setPresenceVerifier($this->verifier);
@@ -274,7 +272,7 @@ class Factory
      * @param  \Curia\Validation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
-    public function setPresenceVerifier(PresenceVerifierInterface $presenceVerifier)
+    public function setPresenceVerifier(DatabasePresenceVerifier $presenceVerifier)
     {
         $this->verifier = $presenceVerifier;
     }
