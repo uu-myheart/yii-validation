@@ -4,8 +4,9 @@ namespace Curia\Validation;
 
 use Closure;
 use Curia\Collect\Str;
+use Curia\Validation\PresenceVerifierInterface;
 
-class DatabasePresenceVerifier
+class DatabasePresenceVerifier implements PresenceVerifierInterface
 {
     /**
      * The database connection instance.
@@ -27,7 +28,7 @@ class DatabasePresenceVerifier
      * @param  \Illuminate\Database\ConnectionResolverInterface  $db
      * @return void
      */
-    public function __construct(ConnectionResolverInterface $db)
+    public function __construct(ConnectionResolverInterface $db = null)
     {
         $this->db = $db;
     }
