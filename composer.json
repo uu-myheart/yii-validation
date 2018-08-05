@@ -1,12 +1,16 @@
 {
-    "name": "curia/validation",
+    "name": "curia/yii-validation",
     "description": "A Validation package for yii2",
     "require": {
-        "curia/collect": "^0.1 || ^1.0"
+        "curia/collect": "^0.1 || ^1.0",
+        "zendframework/zend-diactoros": "~1.8.0"
     },
     "autoload": {
         "psr-4": {
             "Curia\\YiiValidation\\": ""
-        }
+        },
+        "files": [
+            "helpers.php"
+        ]
     }
 }
