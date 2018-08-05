@@ -3,7 +3,7 @@
     "description": "A Validation package for yii2",
     "require": {
         "curia/collect": "^0.1 || ^1.0",
-        "zendframework/zend-diactoros": "~1.8.0"
+        "zendframework/zend-diactoros": "~1.8.4"
     },
     "autoload": {
         "psr-4": {
