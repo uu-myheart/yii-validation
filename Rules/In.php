@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation\Rules;
+namespace Curia\YiiValidation\Rules;
 
 class In
 {
@@ -32,7 +32,7 @@ class In
      *
      * @return string
      *
-     * @see \Curia\Validation\ValidationRuleParser::parseParameters
+     * @see \Curia\YiiValidation\ValidationRuleParser::parseParameters
      */
     public function __toString()
     {

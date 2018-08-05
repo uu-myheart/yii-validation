@@ -1,12 +1,12 @@
 <?php
 
-namespace Curia\Validation;
+namespace Curia\YiiValidation;
 
 use Closure;
 use Curia\Collect\Arr;
 use Curia\Collect\Str;
-use Curia\Validation\Rules\Exists;
-use Curia\Validation\Rules\Unique;
+use Curia\YiiValidation\Rules\Exists;
+use Curia\YiiValidation\Rules\Unique;
 
 class ValidationRuleParser
 {

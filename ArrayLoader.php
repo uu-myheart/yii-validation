@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation;
+namespace Curia\YiiValidation;
 
 class ArrayLoader
 {

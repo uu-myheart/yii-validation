@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation;
+namespace Curia\YiiValidation;
 
 /**
  * Provides default implementation of ValidatesWhenResolved contract.
@@ -38,7 +38,7 @@ trait ValidatesWhenResolvedTrait
     /**
      * Get the validator instance for the request.
      *
-     * @return \Curia\Validation\Validator
+     * @return \Curia\YiiValidation\Validator
      */
     protected function getValidatorInstance()
     {
@@ -48,10 +48,10 @@ trait ValidatesWhenResolvedTrait
     /**
      * Handle a failed validation attempt.
      *
-     * @param  \Curia\Validation\Validator  $validator
+     * @param  \Curia\YiiValidation\Validator  $validator
      * @return void
      *
-     * @throws \Curia\Validation\ValidationException
+     * @throws \Curia\YiiValidation\ValidationException
      */
     protected function failedValidation(Validator $validator)
     {
@@ -77,7 +77,7 @@ trait ValidatesWhenResolvedTrait
      *
      * @return void
      *
-     * @throws \Curia\Validation\UnauthorizedException
+     * @throws \Curia\YiiValidation\UnauthorizedException
      */
     protected function failedAuthorization()
     {

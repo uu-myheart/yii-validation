@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation;
+namespace Curia\YiiValidation;
 
 use Curia\Collect\Arr;
 use Curia\Collect\Str;

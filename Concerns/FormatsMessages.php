@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation\Concerns;
+namespace Curia\YiiValidation\Concerns;
 
 use Closure;
 use Curia\Collect\Arr;
@@ -349,7 +349,7 @@ trait FormatsMessages
      * @param  string  $attribute
      * @param  string  $rule
      * @param  array   $parameters
-     * @param  \Curia\Validation\Validator  $validator
+     * @param  \Curia\YiiValidation\Validator  $validator
      * @return string|null
      */
     protected function callReplacer($message, $attribute, $rule, $parameters, $validator)
@@ -371,7 +371,7 @@ trait FormatsMessages
      * @param  string  $attribute
      * @param  string  $rule
      * @param  array   $parameters
-     * @param  \Curia\Validation\Validator  $validator
+     * @param  \Curia\YiiValidation\Validator  $validator
      * @return string
      */
     protected function callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters, $validator)

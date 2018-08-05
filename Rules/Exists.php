@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation\Rules;
+namespace Curia\YiiValidation\Rules;
 
 class Exists
 {

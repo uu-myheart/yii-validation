@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation\Concerns;
+namespace Curia\YiiValidation\Concerns;
 
 use Curia\Collect\Arr;
 

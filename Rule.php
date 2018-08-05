@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation;
+namespace Curia\YiiValidation;
 
 class Rule
 {
@@ -8,7 +8,7 @@ class Rule
      * Get a dimensions constraint builder instance.
      *
      * @param  array  $constraints
-     * @return \Curia\Validation\Rules\Dimensions
+     * @return \Curia\YiiValidation\Rules\Dimensions
      */
     public static function dimensions(array $constraints = [])
     {
@@ -20,7 +20,7 @@ class Rule
      *
      * @param  string  $table
      * @param  string  $column
-     * @return \Curia\Validation\Rules\Exists
+     * @return \Curia\YiiValidation\Rules\Exists
      */
     public static function exists($table, $column = 'NULL')
     {
@@ -31,7 +31,7 @@ class Rule
      * Get an in constraint builder instance.
      *
      * @param  array|string  $values
-     * @return \Curia\Validation\Rules\In
+     * @return \Curia\YiiValidation\Rules\In
      */
     public static function in($values)
     {
@@ -42,7 +42,7 @@ class Rule
      * Get a not_in constraint builder instance.
      *
      * @param  array|string  $values
-     * @return \Curia\Validation\Rules\NotIn
+     * @return \Curia\YiiValidation\Rules\NotIn
      */
     public static function notIn($values)
     {
@@ -54,7 +54,7 @@ class Rule
      *
      * @param  string  $table
      * @param  string  $column
-     * @return \Curia\Validation\Rules\Unique
+     * @return \Curia\YiiValidation\Rules\Unique
      */
     public static function unique($table, $column = 'NULL')
     {

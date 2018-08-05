@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation\Concerns;
+namespace Curia\YiiValidation\Concerns;
 
 use DateTime;
 use Countable;
@@ -11,9 +11,9 @@ use DateTimeInterface;
 use Curia\Collect\Arr;
 use Curia\Collect\Str;
 use InvalidArgumentException;
-use Curia\Validation\Rules\Exists;
-use Curia\Validation\Rules\Unique;
-use Curia\Validation\ValidationData;
+use Curia\YiiValidation\Rules\Exists;
+use Curia\YiiValidation\Rules\Unique;
+use Curia\YiiValidation\ValidationData;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

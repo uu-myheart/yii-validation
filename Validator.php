@@ -1,6 +1,6 @@
 <?php
 
-namespace Curia\Validation;
+namespace Curia\YiiValidation;
 
 use RuntimeException;
 use Curia\Collect\Arr;
@@ -29,7 +29,7 @@ class Validator
     /**
      * The Presence Verifier implementation.
      *
-     * @var \Curia\Validation\PresenceVerifierInterface
+     * @var \Curia\YiiValidation\PresenceVerifierInterface
      */
     protected $presenceVerifier;
 
@@ -290,7 +290,7 @@ class Validator
      *
      * @return void
      *
-     * @throws \Curia\Validation\ValidationException
+     * @throws \Curia\YiiValidation\ValidationException
      */
     public function validate()
     {
@@ -1009,7 +1009,7 @@ class Validator
     /**
      * Get the Presence Verifier implementation.
      *
-     * @return \Curia\Validation\PresenceVerifierInterface
+     * @return \Curia\YiiValidation\PresenceVerifierInterface
      *
      * @throws \RuntimeException
      */
@@ -1026,7 +1026,7 @@ class Validator
      * Get the Presence Verifier implementation.
      *
      * @param  string  $connection
-     * @return \Curia\Validation\PresenceVerifierInterface
+     * @return \Curia\YiiValidation\PresenceVerifierInterface
      *
      * @throws \RuntimeException
      */
@@ -1040,7 +1040,7 @@ class Validator
     /**
      * Set the Presence Verifier implementation.
      *
-     * @param  \Curia\Validation\PresenceVerifierInterface  $presenceVerifier
+     * @param  \Curia\YiiValidation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
     public function setPresenceVerifier(DatabasePresenceVerifier $presenceVerifier)

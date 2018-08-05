@@ -1,10 +1,10 @@
 <?php
 
-namespace Curia\Validation;
+namespace Curia\YiiValidation;
 
 use Closure;
 use Curia\Collect\Str;
-use Curia\Validation\Translator;
+use Curia\YiiValidation\Translator;
 use yii\base\InvalidConfigException;
 
 class Factory
@@ -86,7 +86,7 @@ class Factory
      * @param  array  $rules
      * @param  array  $messages
      * @param  array  $customAttributes
-     * @return \Curia\Validation\Validator
+     * @return \Curia\YiiValidation\Validator
      */
     public function make(array $data, array $rules, array $messages = [], array $customAttributes = [])
     {
@@ -125,7 +125,7 @@ class Factory
      * @param  array  $customAttributes
      * @return void
      *
-     * @throws \Curia\Validation\ValidationException
+     * @throws \Curia\YiiValidation\ValidationException
      */
     public function validate(array $data, array $rules, array $messages = [], array $customAttributes = [])
     {
@@ -139,7 +139,7 @@ class Factory
      * @param  array  $rules
      * @param  array  $messages
      * @param  array  $customAttributes
-     * @return \Curia\Validation\Validator
+     * @return \Curia\YiiValidation\Validator
      */
     protected function resolve(array $data, array $rules, array $messages, array $customAttributes)
     {
@@ -153,7 +153,7 @@ class Factory
     /**
      * Add the extensions to a validator instance.
      *
-     * @param  \Curia\Validation\Validator  $validator
+     * @param  \Curia\YiiValidation\Validator  $validator
      * @return void
      */
     protected function addExtensions(Validator $validator)
@@ -259,7 +259,7 @@ class Factory
     /**
      * Get the Presence Verifier implementation.
      *
-     * @return \Curia\Validation\PresenceVerifierInterface
+     * @return \Curia\YiiValidation\PresenceVerifierInterface
      */
     public function getPresenceVerifier()
     {
@@ -269,7 +269,7 @@ class Factory
     /**
      * Set the Presence Verifier implementation.
      *
-     * @param  \Curia\Validation\PresenceVerifierInterface  $presenceVerifier
+     * @param  \Curia\YiiValidation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
     public function setPresenceVerifier(DatabasePresenceVerifier $presenceVerifier)
