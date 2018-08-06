@@ -1,6 +1,7 @@
 {
     "name": "curia/yii-validation",
     "description": "A Validation package for yii2",
+    "license": "MIT",
     "require": {
         "curia/collect": "^0.1 || ^1.0",
         "zendframework/zend-diactoros": "~1.8.4"
