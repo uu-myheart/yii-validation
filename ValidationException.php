@@ -2,10 +2,10 @@
 
 namespace Curia\YiiValidation;
 
-use Exception;
 use Curia\Collect\Arr;
+use yii\web\HttpException;
 
-class ValidationException extends Exception
+class ValidationException extends HttpException
 {
     /**
      * The validator instance.
@@ -52,7 +52,7 @@ class ValidationException extends Exception
      */
     public function __construct($validator, $response = null, $errorBag = 'default')
     {
-        parent::__construct('The given data was invalid.');
+        // parent::__construct('The given data was invalid.');
 
         $this->response = $response;
         $this->errorBag = $errorBag;
